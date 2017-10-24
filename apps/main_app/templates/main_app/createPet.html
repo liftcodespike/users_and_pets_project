@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pet Form</title>
+</head>
+<body>
+	<form action="/pet/create" method="post">
+		{%csrf_token%}
+		<input type="text" name="name" placeholder="Enter pets Name">
+		<input type="submit" value='Add Pet'>
+	</form>
+
+</body>
+</html>

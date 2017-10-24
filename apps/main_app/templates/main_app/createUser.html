@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Form</title>
+</head>
+<body>
+	<form action="/user/create" method="post">
+		{%csrf_token%}
+		<input type="text" name="name" placeholder="Enter yo Name">
+		<input type="text" name="age" placeholder="Enter yo Age">
+		<input type="submit" value='Add User'>
+	</form>
+
+</body>
+</html>

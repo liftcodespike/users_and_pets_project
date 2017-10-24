@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>Here is your users name: {{user.name}}</p>
+
+
+	<p>Here are  the pets he/she owns:</p>
+		{%for pet in user.pets.all%}
+			<p>{{pet.name}}</p>
+		{%endfor%}
+
+</body>
+</html>

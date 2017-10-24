@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<a href="/user/new">Create New User</a> | <a href="/pet/new">Create New Pet</a>
+
+
+
+
+
+	<div style='outline: thin solid black'>
+		<form action='/user/pet/add' method='post'> 
+			{%csrf_token%}
+			<select name='userid'>
+				{%for user in users%}
+					<option value='{{user.id}}'>{{user.name}}</option>
+				{%endfor%}	
+			</select>
+
+
+
+			<select name='petid'>
+				{%for pet in pets%}
+					<option value='{{pet.id}}'>{{pet.name}}</option>
+				{%endfor%}	
+			</select>
+			<input type="submit" value='submit'>
+				
+		</form>
+	</div>
+
+
+
+	<table border="1px">
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Pet Count</th>
+		</tr>
+		{%for user in users%}
+			<tr>
+				<td><a href="/user/show/{{user.id}}">{{user.name}}</a></td>
+				<td>{{user.age}}</td>
+				<td>{{user.pets.all.count}}</td>
+			</tr>
+		{%endfor%}
+		
+	</table>
+
+</body>
+</html>
